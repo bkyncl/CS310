@@ -1,7 +1,7 @@
 /*
 * Student Name: Brittany Kyncl
 * File Name: Ch02Exercise13.cpp
-* Date: 3.14.24
+* Date: 3.15.24
 * Description: 
 *   This program calculates the selling price and final price of an item
 *   based on the original price, markup percentage, and sales tax rate.
@@ -38,7 +38,7 @@ double validateInput(const string& prompt) {
     double input;
     bool validInput = false;
 
-    // do while llop to perform iterative input validation and user prompt display
+    // do while loop to perform iterative input validation and user prompt display
     do {
         cout << prompt; // Display prompt
         if (cin >> input) { // Check if the input is sucessfully read
