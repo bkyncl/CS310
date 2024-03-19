@@ -1,7 +1,7 @@
 /*
 * Student Name: Brittany Kyncl
 * File Name: bkyncl_buggyProgram.cpp
-* Date: 3.18.24
+* Date: 3.19.24
 * Description: 
 *   This is a simple program with intentional common errors.
 *   The purpose of this program is to demonstrate common errors
