@@ -43,7 +43,7 @@ int main() {
     // Calculate average of all user input
     average = sum / 3;
     // Calculate max of all user input
-    maximum = max(x,y,z); // FIX: curly braces missing here, causing compilation error
+    maximum = max({x,y,z}); // FIX: curly braces missing here, causing compilation error
                           // WHY: the max() function requires an initializer list or curly braces around the numbers when comparing 3 or more.
                           // The braces are not required for comparing only two numbers but here we have 3
 
