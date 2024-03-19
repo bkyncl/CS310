@@ -7,7 +7,7 @@
 *   The purpose of this program is to demonstrate common errors
 *   that can prevent a program from executing successfully and
 *   to provide practice with analyzing code, identifying and debugging errors.
-*   (Hint: there are 3 bugs in total to find, all compilation errors)
+*   (Hint: there are 3 bugs in total to find)
 * Input:
 *   - 3 double numbers for caclucations
 * Output:
