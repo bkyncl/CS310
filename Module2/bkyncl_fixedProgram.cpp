@@ -44,8 +44,8 @@ int main() {
     average = sum / 3;
     // Calculate max of all user input
     maximum = max({x,y,z}); // FIX: curly braces missing here, causing compilation error
-                          // WHY: the max() function requires an initializer list or curly braces around the numbers when comparing 3 or more.
-                          // The braces are not required for comparing only two numbers but here we have 3
+                            // WHY: the max() function requires an initializer list or curly braces around the numbers when comparing 3 or more.
+                            // The braces are not required for comparing only two numbers but here we have 3
 
     // Output the result of sum, average, and max of user input
     cout << fixed << setprecision(2); // Set decimal precision to 2 places for output
