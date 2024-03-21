@@ -56,7 +56,6 @@ int main()
     std::cout << std::fixed << std::setprecision(2); // set the decimal to two places.
     std::locale loc(""); // for the thousands separator
     std::cout.imbue(loc); // for the thousands separator
-    std::cout << "The selected locale is: " << loc.name() << '\n';
 
     std::cout << "interest: " << interest << "\n";
 
