@@ -1,6 +1,6 @@
 /*
 * Student Name: Brittany Kyncl
-* File Name: bkyncl_debuggingSolution.cpp
+* File Name: bkyncl_debuggingExercise.cpp
 * Date: 3.27.24
 * Description: 
 *   This program contains 4 intentional errors, for the purpose of debugging practice.
