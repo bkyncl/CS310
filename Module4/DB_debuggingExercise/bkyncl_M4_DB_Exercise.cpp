@@ -5,7 +5,7 @@
 * Description: 
 *   This program contains 4 intentional errors, for the purpose of debugging practice.
 *   This program takes in two integers, the number of terms to print in Fibonacci series 
-*   and the highest value to print in a Fibonacci series. Utelizing reptition control 
+*   and the highest value to print in a Fibonacci series. Utilizing reptition control 
 *   statements with a do-while to prompt the user until valid input is given
 *   then a for loop and a while loop to generate and print the Fibonacci series.
 * Input:
