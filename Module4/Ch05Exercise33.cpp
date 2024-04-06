@@ -18,7 +18,6 @@
 
 #include <iostream>
 #include <conio.h>
-#include <iomanip>
 #include <limits>
 #include <locale>
 using namespace std;
@@ -45,7 +44,9 @@ int validateIntegerInput(const string& prompt) {
     return input;
 }
 int main() {
-    
+    // Imbue the output stream with the default locale to enable thousand separator formatting
+    cout.imbue(locale(""));
+
     // Variable for program loop option
     char choiceToLoop;
 
