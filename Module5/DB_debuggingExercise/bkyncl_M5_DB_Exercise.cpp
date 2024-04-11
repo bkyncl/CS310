@@ -16,7 +16,7 @@
 #include <iostream>
 #include <conio.h>
 #include <limits>
-#include <math.h>
+#include <cmath>
 using namespace std;
 
 /**
