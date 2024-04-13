@@ -74,7 +74,7 @@ void printClientReceipt(bool low_income, int consulting_time, double hourly_rate
     int minutes = consulting_time % 60;
 
     cout << "\n  ---------- Receipt ----------" << endl;
-    cout << "\n  Total Income: $" << userIncome << endl;
+    cout << "\n  Total Income: $" << fixed << setprecision(2) << userIncome << endl;
     cout << "\n  Low income: " << boolalpha << low_income << endl;
     cout << "\n  Consulting time: "<< hours << " hour(s) and " << minutes << " minute(s)" << endl;
     cout << "\n  Hourly rate: $" << hourly_rate << endl;
