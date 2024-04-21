@@ -1,5 +1,5 @@
 // Discussionboardweek6.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// Bugs fixed by brittany kyncl 4.21.24
 
 #include <iostream>
 
