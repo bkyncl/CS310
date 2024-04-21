@@ -57,10 +57,9 @@ bool isVowel(char c) {
  * Removes all vowels from the string.
  * 
  * @param str The input string
- * @return A new string with all vowels removed
+ * @return A string with all vowels removed
  */
 string removeVowelsWithSubstr(string str) {
-
 
     // Loop through each character in the string
     for (int i = 0; i < str.length(); ++i) {
