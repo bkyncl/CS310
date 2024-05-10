@@ -2,6 +2,8 @@
 //5/10/2024
 //Shapes Parent class + two subclasses
 
+// Bugs fixed 5.10.24 by brittany kyncl
+
 #include <iostream>
 
 using namespace std; // FIX: Added missing namespace std for cout and endl
