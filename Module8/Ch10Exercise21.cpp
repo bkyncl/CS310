@@ -20,6 +20,7 @@
 #include <string>
 #include <limits>
 #include <iomanip>
+#include <vector>
 
 using namespace std;
 
@@ -126,14 +127,15 @@ void viewAllAccounts(const BankAccount accounts[], int size) {
 // Function to apply interest rate on all acounts
 void applyInterestOnAll(BankAccount accounts[], int size) {
     int num_fails = 0; // Holds num of fails
-    int failed_indicies[size]; // Array to hold indicies of failed updates
+    std::vector<int> failed_indicies; // Use std::vector for dynamic size
     double prev_balance, new_balance;
 
     cout << "\n  Applying Interest On All Accounts... " << endl;
     for (int i = 0; i < size; i++) {
         prev_balance = accounts[i].getBalance();
         if (!accounts[i].applyInterest()) {
-            failed_indicies[num_fails++] = i; // Store index of failed attempt and increment num of fails
+            failed_indicies.push_back(i); // Use push_back to add elements to a std::vector
+            num_fails++; // Increment num of fails
         } else {
             cout << "\n  Account ID: " << accounts[i].getAccountNumber() << endl;
             cout << "  Account Interest: " << accounts[i].getInterestRate() * 100 << "%" << endl;
