@@ -93,7 +93,7 @@ int main() {
 
     // Create instances of different account types 
     CheckingAccount check_account ("John Doe", 5000.0, 0.0005, 100, 10); // Acount number 1000
-    SavingsAccount saving_account("Jane Smith", 10000.0, 0.005); // Acount number 1002
+    SavingsAccount saving_account("Jane Smith", 10000.0, 0.005); // Acount number 1001
 
 
     // Display all account info
