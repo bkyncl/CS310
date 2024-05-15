@@ -52,7 +52,7 @@ int main() {
     cout << "\nNumbers Array = [ ";
     for (int i = 0; i < 5; i++) {
         if (i < 4) {
-            cout <<  (numbers + i) << ", ";
+            cout << (numbers + i) << ", ";
         } else {
             cout << (numbers + i) << " ]" << endl;
         } 
