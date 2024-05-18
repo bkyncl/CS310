@@ -1,7 +1,7 @@
 /**
  * Student Name: Brittany Kyncl
  * File Name: Ch12Exercise3.cpp
- * Date: 5.17.24
+ * Date: 5.18.24
  * Description: 
  *   This program calculates the winner of an election based on user input.
  *   It utilizes a dynamic array (vector) to store candidate information (names, votes, percentage of votes).
@@ -29,7 +29,7 @@ using namespace std;
 
 int main() {
     // Imbue the output stream with the default locale to enable thousand separator formatting
-    // cout.imbue(locale("")); !!!!!!!!!NOTICE UNCOMMENT BEFORE SUBMISSION!!!!!!!
+    cout.imbue(locale(""));
 
     // Variable for program loop option
     char choice_loop;
@@ -102,7 +102,7 @@ int main() {
         cin >> choice_loop;
 
         // Clear the candidates vector, winner_indices vector, and input buffer before the loop repeats
-        candidates.clear(); // Note: not sure if best practice
+        candidates.clear();
         winner_indices.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
