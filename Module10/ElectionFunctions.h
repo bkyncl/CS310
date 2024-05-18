@@ -15,16 +15,14 @@
 #include <limits>
 #include <vector>
 
-using namespace std;
-
 // Define a struct to represent a candidate
 struct Candidate {
-    string name;        // Name of the candidate
+    std::string name;        // Name of the candidate
     int votes;          // Number of votes received by the candidate
     float percentage;   // Percentage of total votes received by the candidate
 
     // Constructor to initalize the Candidate struct
-    Candidate(const string& name, int votes = 0, float percentage = 0.0) : name(name), votes(votes), percentage(percentage) {}
+    Candidate(const std::string& name, int votes = 0, float percentage = 0.0) : name(name), votes(votes), percentage(percentage) {}
 };
 /**
  * Validates that the input string contains only letters and spaces.
@@ -32,7 +30,7 @@ struct Candidate {
  * @param str Input string to be validated
  * @return true if the string is valid, false otherwise
  */
-bool validString(string& str) {
+bool validString(std::string& str) {
     if (str.length() == 0) {
         return false;
     }
@@ -53,9 +51,9 @@ bool validString(string& str) {
  */
 bool validInt(int& input) {
     // Check if input stream has failed, input is negative, or next character is not newline
-    if (cin.fail() || input < 0 || cin.peek() != '\n') {
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Clear newline character from input buffer
+    if (std::cin.fail() || input < 0 || std::cin.peek() != '\n') {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear newline character from input buffer
         return false;
     } else {
         return true;
@@ -67,21 +65,21 @@ bool validInt(int& input) {
  * @param candidates A vector containing Candidate structs representing all candidates in the election
  * @param total_votes Total number of votes received in the election
  */
-void printCandidateVotesTable(const vector<Candidate>& candidates, int total_votes) {
+void printCandidateVotesTable(const std::vector<Candidate>& candidates, int total_votes) {
     // Table header
-    cout << "\n  ---------------------------------------------------------" << endl;
-    cout << left << setw(20) << "  Candidate" << setw(20) << "  Votes Received" << setw(20) << "  % of Total Votes" << endl;
+    std::cout << "\n  ---------------------------------------------------------" << std::endl;
+    std::cout << std::left << std::setw(20) << "  Candidate" << std::setw(20) << "  Votes Received" << std::setw(20) << "  % of Total Votes" << std::endl;
 
     // Iterate through each element in vector and print candidate info
     for (const Candidate& candidate : candidates) {         
-        cout << "  " << left << setw(20) << candidate.name
-             << setw(20) << candidate.votes
-             << setw(20) << fixed << setprecision(2) << candidate.percentage << endl; 
+        std::cout << "  " << std::left << std::setw(20) << candidate.name
+             << std::setw(20) << candidate.votes
+             << std::setw(20) << std::fixed << std::setprecision(2) << candidate.percentage << std::endl; 
     }
-    cout << "  ---------------------------------------------------------" << endl;
+    std::cout << "  ---------------------------------------------------------" << std::endl;
 
     // Total votes after table footer
-    cout << left << setw(20) << "  Total" << "  " << setw(20) << total_votes << endl;
+    std::cout << std::left << std::setw(20) << "  Total" << "  " << std::setw(20) << total_votes << std::endl;
 }
 /**
  * Calculates the total number of votes received by all candidates in election
@@ -89,7 +87,7 @@ void printCandidateVotesTable(const vector<Candidate>& candidates, int total_vot
  * @param candidates A vector containing Candidate structs representing all candidates in the election
  * @return The total number of votes received
  */
-int calculateTotalVotes(const vector<Candidate>& candidates) {
+int calculateTotalVotes(const std::vector<Candidate>& candidates) {
     // Initialize a variable to hold the total number of votes
     int total_votes = 0;
     // Iterate over each candidate in the candidates vector
@@ -106,7 +104,7 @@ int calculateTotalVotes(const vector<Candidate>& candidates) {
  * @param candidates A vector containing Candidate structs representing all candidates in the election
  * @param total_votes The total number of votes received
  */
-void calculatePercentageOfVotes(vector<Candidate>& candidates, int total_votes) {
+void calculatePercentageOfVotes(std::vector<Candidate>& candidates, int total_votes) {
     // Iterate over each candidate in the candidates vector
     for (Candidate& candidate : candidates) {
         // Calculate the percentage of votes received by the candidate relative to the total votes
@@ -121,14 +119,14 @@ void calculatePercentageOfVotes(vector<Candidate>& candidates, int total_votes) 
  * @param candidates A vector containing Candidate structs representing all candidates in the election
  * @return A vector of indices representing the winner(s) of the election. If there is a tie, all tied indices are returned.
  */
-vector<size_t> findWinnerIndices(const vector<Candidate>& candidates) {
-    vector<size_t> winners_indices; // Vector to store indices of the winner(s)
+std::vector<size_t> findWinnerIndices(const std::vector<Candidate>& candidates) {
+    std::vector<size_t> winners_indices; // Vector to store indices of the winner(s)
     int max_votes = 0; // Variable to store the maximum number of votes
 
     // Find the maximum number of votes
     for (const Candidate& candidate : candidates) {
         // Update max_votes to store returned maximum value of votes
-        max_votes = max(max_votes, candidate.votes);
+        max_votes = std::max(max_votes, candidate.votes);
     }
 
     // Find the indices of the candidates with the maximum number of votes (possible winners)
@@ -147,7 +145,7 @@ vector<size_t> findWinnerIndices(const vector<Candidate>& candidates) {
  * @param candidates A vector containing Candidate structs representing all candidates in the election
  * @return The index of the winning candidate
  */
-size_t findWinnerIndex(const vector<Candidate>& candidates) {
+size_t findWinnerIndex(const std::vector<Candidate>& candidates) {
     size_t winner_index = 0; // Initialize the index of the winner to the first candidate
 
     // Comparisons of winnder_index with other candidates start from second candidate (index 1) onwards
