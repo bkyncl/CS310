@@ -7,7 +7,7 @@
  *   It utilizes a dynamic array (vector) to store candidate information (names, votes, percentage of votes).
  *   The candidate data is organized using a struct called Candidate. After collecting candidate information, 
  *   it calculates the total number of votes received and the percentage of total votes received by each candidate.
- *   Finally, it displays a table showing candidate names, votes received, percentage of votes, total votes, and then displays the winner.
+ *   Finally, it displays a table showing candidate names, votes received, percentage of votes, total votes, and then displays the winner (or winners in case of tie).
 * Input:
 *   - The number of candidates
 *   - Last name of each of the candidates
