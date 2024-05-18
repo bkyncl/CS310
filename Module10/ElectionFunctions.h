@@ -143,26 +143,4 @@ std::vector<int> findWinnerIndices(const std::vector<Candidate>& candidates) {
 
     return winners_indices;
 }
-/**
- * Finds the index of the winner of the election based on the number of votes received.
- * NOTE: !OUTDATED - NOT USED! Original version of function to find election winner
- * 
- * @param candidates A vector containing Candidate structs representing all candidates in the election
- * @return The index of the winning candidate
- */
-[[deprecated("This function is outdated and should not be used. Please use findWinnerIndices instead.")]]
-int findWinnerIndex(const std::vector<Candidate>& candidates) {
-    int winner_index = 0; // Initialize the index of the winner to the first candidate
-
-    // Comparisons of winnder_index with other candidates start from second candidate (index 1) onwards
-    for (size_t i = 1; i < candidates.size(); i++) { 
-        // Check if the current candidate has more votes than the current winner
-        if (candidates[i].votes > candidates[winner_index].votes) {
-            // Update the index of the winner
-            winner_index = i;
-        }
-    }
-    // Return the index of the winning candidate
-    return winner_index;
-}
 #endif // ELECTIONFUNCTIONS_H
