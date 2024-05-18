@@ -17,7 +17,7 @@
 
 // Define a struct to represent a candidate
 struct Candidate {
-    std::string name;        // Name of the candidate
+    std::string name;   // Name of the candidate
     int votes;          // Number of votes received by the candidate
     float percentage;   // Percentage of total votes received by the candidate
 
@@ -105,11 +105,16 @@ int calculateTotalVotes(const std::vector<Candidate>& candidates) {
  * @param total_votes The total number of votes received
  */
 void calculatePercentageOfVotes(std::vector<Candidate>& candidates, int total_votes) {
-    // Iterate over each candidate in the candidates vector
-    for (Candidate& candidate : candidates) {
-        // Calculate the percentage of votes received by the candidate relative to the total votes
-        // Update the percentage member variable of the current candidate object
-        candidate.percentage = (static_cast<float>(candidate.votes) / total_votes) * 100.0; 
+    // Check if total_votes is zero to avoid division by zero
+    if (total_votes == 0) {
+        return; // Exit function early
+    } else {
+        // Iterate over each candidate in the candidates vector
+        for (Candidate& candidate : candidates) {
+            // Calculate the percentage of votes received by the candidate relative to the total votes
+            // Update the percentage member variable of the current candidate object
+            candidate.percentage = (static_cast<float>(candidate.votes) / total_votes) * 100.0; 
+        }
     }
 }
 /**
@@ -119,8 +124,8 @@ void calculatePercentageOfVotes(std::vector<Candidate>& candidates, int total_vo
  * @param candidates A vector containing Candidate structs representing all candidates in the election
  * @return A vector of indices representing the winner(s) of the election. If there is a tie, all tied indices are returned.
  */
-std::vector<size_t> findWinnerIndices(const std::vector<Candidate>& candidates) {
-    std::vector<size_t> winners_indices; // Vector to store indices of the winner(s)
+std::vector<int> findWinnerIndices(const std::vector<Candidate>& candidates) {
+    std::vector<int> winners_indices; // Vector to store indices of the winner(s)
     int max_votes = 0; // Variable to store the maximum number of votes
 
     // Find the maximum number of votes
@@ -130,7 +135,7 @@ std::vector<size_t> findWinnerIndices(const std::vector<Candidate>& candidates) 
     }
 
     // Find the indices of the candidates with the maximum number of votes (possible winners)
-    for (size_t i = 0; i < candidates.size(); i++) {
+    for (int i = 0; i < candidates.size(); i++) {
         if (candidates[i].votes == max_votes) {
             winners_indices.push_back(i); // Add index of candidate with maximum votes to winners_indices
         }
@@ -140,16 +145,16 @@ std::vector<size_t> findWinnerIndices(const std::vector<Candidate>& candidates) 
 }
 /**
  * Finds the index of the winner of the election based on the number of votes received.
- * NOTE: Original version of function to find election winner
+ * NOTE: !OUTDATED! Original version of function to find election winner
  * 
  * @param candidates A vector containing Candidate structs representing all candidates in the election
  * @return The index of the winning candidate
  */
-size_t findWinnerIndex(const std::vector<Candidate>& candidates) {
-    size_t winner_index = 0; // Initialize the index of the winner to the first candidate
+int findWinnerIndex(const std::vector<Candidate>& candidates) {
+    int winner_index = 0; // Initialize the index of the winner to the first candidate
 
     // Comparisons of winnder_index with other candidates start from second candidate (index 1) onwards
-    for (size_t i = 1; i < candidates.size(); ++i) { 
+    for (int i = 1; i < candidates.size(); i++) { 
         // Check if the current candidate has more votes than the current winner
         if (candidates[i].votes > candidates[winner_index].votes) {
             // Update the index of the winner

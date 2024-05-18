@@ -81,18 +81,18 @@ int main() {
         printCandidateVotesTable(candidates, total_votes);
 
         // Store returned index/indices from findWinnerIndices() in winner_indicies vector
-        vector<size_t> winner_indices = findWinnerIndices(candidates);
+        vector<int> winner_indices = findWinnerIndices(candidates);
 
         // If winner_indices contians only 1 index then single winner result
         if (winner_indices.size() == 1) {
             // Retrieve name of winner using first index and display
-            size_t winner_index = winner_indices[0];
+            int winner_index = winner_indices[0];
             cout << "\n  The winner of the election is: " << candidates[winner_index].name << endl;
         } else { 
             // If multiple indices in vector then tie result
             cout << "\n  There is a tie between the following candidates: \n";
             // Iterate through each index in winner_indices and display winner name
-            for (size_t winner : winner_indices) {
+            for (int winner : winner_indices) {
                 cout << "  - " << candidates[winner].name << endl;
             }
         }
