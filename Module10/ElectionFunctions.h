@@ -1,6 +1,6 @@
 /*
 * Student Name: Brittany Kyncl
-* File Name: ElectionFunctions_H
+* File Name: ElectionFunctions.h
 * Date: 5.18.24
 * Description: 
 *   This file contains functions for handling election data. It defines a struct Candidate to represent individual candidates, 
