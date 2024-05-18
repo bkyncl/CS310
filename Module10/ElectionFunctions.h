@@ -135,7 +135,7 @@ std::vector<int> findWinnerIndices(const std::vector<Candidate>& candidates) {
     }
 
     // Find the indices of the candidates with the maximum number of votes (possible winners)
-    for (int i = 0; i < candidates.size(); i++) {
+    for (size_t i = 0; i < candidates.size(); i++) {
         if (candidates[i].votes == max_votes) {
             winners_indices.push_back(i); // Add index of candidate with maximum votes to winners_indices
         }
@@ -154,7 +154,7 @@ int findWinnerIndex(const std::vector<Candidate>& candidates) {
     int winner_index = 0; // Initialize the index of the winner to the first candidate
 
     // Comparisons of winnder_index with other candidates start from second candidate (index 1) onwards
-    for (int i = 1; i < candidates.size(); i++) { 
+    for (size_t i = 1; i < candidates.size(); i++) { 
         // Check if the current candidate has more votes than the current winner
         if (candidates[i].votes > candidates[winner_index].votes) {
             // Update the index of the winner
