@@ -29,7 +29,7 @@ using namespace std;
 
 int main() {
     // Imbue the output stream with the default locale to enable thousand separator formatting
-    // cout.imbue(locale(""));
+    cout.imbue(locale(""));
 
     // Variable for program loop option
     char choice_loop;
