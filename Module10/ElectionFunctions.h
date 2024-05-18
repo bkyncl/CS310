@@ -126,6 +126,7 @@ void calculatePercentageOfVotes(std::vector<Candidate>& candidates, int total_vo
  */
 std::vector<int> findWinnerIndices(const std::vector<Candidate>& candidates) {
     std::vector<int> winners_indices; // Vector to store indices of the winner(s)
+    winners_indices.reserve(1); // Reserve initial capacity of 1
     int max_votes = 0; // Variable to store the maximum number of votes
 
     // Find the maximum number of votes

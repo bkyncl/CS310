@@ -29,7 +29,7 @@ using namespace std;
 
 int main() {
     // Imbue the output stream with the default locale to enable thousand separator formatting
-    cout.imbue(locale(""));
+    // cout.imbue(locale(""));
 
     // Variable for program loop option
     char choice_loop;
@@ -43,7 +43,7 @@ int main() {
         do {
             cout << "\n  Please enter the number of candidates: ";
             cin >> num_candidates;
-        } while (!validInt(num_candidates)); // Loop while input is not valid positive integer
+        } while (!validInt(num_candidates) || num_candidates == 0); // Loop while input is not valid positive integer
 
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Clear newline character from input buffer
 
