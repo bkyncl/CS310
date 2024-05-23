@@ -7,7 +7,7 @@
  *  This program demonstrates the use of templates, to work with varying data types.
  *  PrintResults is a function template that displays a message and values in a structured format,
  *  while Swap is a function template used for swapping values of the same type.
- *  In main, these template functions are applied to different data types, including integers, floating-point numbers, characters, and strings.
+ *  In main, these template functions are applied to different data types, including integers, doubles, characters, and strings.
  * */
 
 #include <iostream>
