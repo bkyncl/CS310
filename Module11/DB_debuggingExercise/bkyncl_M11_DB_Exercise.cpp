@@ -22,7 +22,7 @@ void PrintResults(U& message, U& val1, U& val2) {
     cout << message << " swap: " << val1 << " " << val2 << endl;
 }
 
-// Define a function template to swap two values of type template parameter T
+// Function template to swap two values of type template parameter T
 template<typename T>
 void Swap(T& a, T& b) {
     int temp = a;
