@@ -54,8 +54,8 @@ int main() {
     default_random_engine eng(seed);
 
     // Define the range for random numbers
-    double min = 1;
-    double max = 5;
+    double min = 10;
+    double max = 100;
 
     // Call the function to print 25 random real numbers three times to demonstrate random generation
     printRandom(eng, min, max);
