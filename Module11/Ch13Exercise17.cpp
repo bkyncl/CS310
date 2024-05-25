@@ -17,6 +17,10 @@
 #include <chrono>
 
 using namespace std;
+
+// Define a named constant for the number of random numbers to generate
+const int NUM_RANDOM_NUMBERS = 25;
+
 /**
  * Generates and prints 25 random real numbers within the specified range of min and max.
  * 
@@ -32,7 +36,7 @@ void printRandom(default_random_engine& eng, double min, double max) {
     
     // Generate and output 25 random real numbers
     cout << "\n  25 random real numbers between " << min << " and " << max << ":\n";
-    for (int i = 0; i < 25; ++i) {
+    for (int i = 0; i < NUM_RANDOM_NUMBERS; ++i) {
         // Generate a random number by calling the uniform distribution object with the random engine
         double num = dist(eng); // Returning a random number within the specified range      
         cout << "  " << num << "\t";
@@ -50,8 +54,8 @@ int main() {
     default_random_engine eng(seed);
 
     // Define the range for random numbers
-    double min = 10.0;
-    double max = 100.0;
+    double min = 1;
+    double max = 5;
 
     // Call the function to print 25 random real numbers three times to demonstrate random generation
     printRandom(eng, min, max);
