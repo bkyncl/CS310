@@ -1,0 +1,65 @@
+/**
+ * Student Name: Brittany Kyncl
+ * File Name: bkyncl_M11_DB_Exercise_Solution.cpp
+ * Date: 5.22.24
+ * Description:
+ *  Solution file to 'bkyncl_M10_DB_Exercise.cpp' with 3 errors solved.
+ *  This program demonstrates the use of templates, to work with varying data types.
+ *  PrintResults is a function template that displays a message and values in a structured format,
+ *  while Swap is a function template used for swapping values of the same type.
+ *  In main, these template functions are applied to different data types, including integers, doubles, characters, and strings.
+ * */
+
+#include <iostream>
+#include <conio.h>
+#include <string>
+using namespace std;
+
+// Function template named PrintResults to print a message and values in specified format
+// The template takes two template parameters, T and U, representing the types of the values and the message
+template<typename T, typename U>
+void PrintResults(T& message, U& val1, U& val2) { // Fix: Change the template parameter type for the message parameter from U to T, so message value can have different type.
+    cout << message << " swap: " << val1 << " " << val2 << endl;
+}
+
+// Function template to swap two values of type template parameter T
+template<typename T>
+void Swap(T& a, T& b) {
+    T temp = a; // FIX: Changed type of temp to match template parameter type 'T'
+    a =b;
+    b = temp;
+}
+int main() {
+
+    // Declare variables of different types and initialize them with values
+    int a = 5, b = 10;
+    double c = 2.56, d = 15.23;
+    char e = '&', f = '$';
+    string g = "Hello", h = "Goodbye";
+    string bef = "Before", aft = "After"; // Strings for before and after messaging
+    char bef2 = '<', aft2 = '>'; // Characters for before and after symbols
+
+    PrintResults(bef, a, b); // Print a message and values before swapping integers
+    Swap<int>(a, b);         // Call the Swap function to swap the integers
+    PrintResults(aft, a, b); // Print a message and swapped values after swapping integers
+    cout << endl;
+
+    PrintResults(bef2, c, d); // Print a message and values before swapping doubles (passing char type for message instead of string)
+    Swap<double>(c, d);       // Call the Swap function to swap the doubles
+    PrintResults(aft2, c, d); // Print a message and swapped values after swapping doubles (passing char type for message instead of string)
+    cout << endl;
+
+    PrintResults(bef, e, f); // Print a message and values before swapping characters
+    Swap<char>(e, f);        // Fix: Incorrect Template Argument in Swap Function Call changed to 'char' from 'float' to match parameter data type
+    PrintResults(aft, e, f); // Print a message and swapped values after swapping characters
+    cout << endl;
+
+    PrintResults(bef, g, h); // Print a message and values before swapping strings
+    Swap<string>(g, h);      // Call the Swap function to swap the strings
+    PrintResults(aft, g, h); // Print a message and swapped values after swapping strings
+
+    cout << "\nExiting program. Press any key to continue..." << endl;
+    _getch(); // Halt execution until key entry
+
+    return 0;
+}
