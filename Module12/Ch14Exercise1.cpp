@@ -131,6 +131,8 @@ char validateChoice(const string& prompt) {
     }
 }
 int main() {
+    // Imbue the output stream with the default locale to enable thousand separator formatting
+    cout.imbue(locale(""));
 
     cout << "\n  Enter a length in feet and inches to output the equivalent length in centimeters..." << endl;
     while (true) {
